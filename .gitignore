@@ -1,0 +1,11 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Node (future)
+node_modules/
+.env
+.env.*
+dist/
+build/
+.next/

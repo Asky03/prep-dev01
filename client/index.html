@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Auth UI - Day 1</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+  </div>
+
+  <main class="page">
+    <section class="card" role="region" aria-label="Authentication card">
+      <header class="card__header">
+        <div class="brand">
+          <div class="brand__logo" aria-hidden="true">S</div>
+          <div>
+            <h1 class="brand__title">Start Project</h1>
+            <p class="brand__subtitle">Day 1 • Static Auth UI</p>
+          </div>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Auth tabs">
+          <button class="tab is-active" id="tab-login" role="tab" aria-selected="true" aria-controls="panel-login">
+            Login
+          </button>
+          <button class="tab" id="tab-signup" role="tab" aria-selected="false" aria-controls="panel-signup">
+            Signup
+          </button>
+        </div>
+      </header>
+
+      <div class="card__body">
+        <!-- LOGIN PANEL -->
+        <section class="panel is-active" id="panel-login" role="tabpanel" aria-labelledby="tab-login">
+          <form class="form" autocomplete="on">
+            <div class="field">
+              <label class="label" for="login-email">Email</label>
+              <input class="input" id="login-email" type="email" placeholder="you@example.com" />
+              <p class="hint">Use a valid email format.</p>
+            </div>
+
+            <div class="field">
+              <label class="label" for="login-password">Password</label>
+
+              <div class="input-wrap">
+                <input class="input" id="login-password" type="password" placeholder="••••••••" />
+                <button class="icon-btn" type="button" data-toggle="password" data-target="login-password" aria-label="Show password">
+                  👁️
+                </button>
+              </div>
+
+              <div class="row">
+                <label class="check">
+                  <input type="checkbox" />
+                  <span>Remember me</span>
+                </label>
+
+                <a class="link" href="#" onclick="return false;">Forgot password?</a>
+              </div>
+            </div>
+
+            <button class="btn btn--primary" type="button" disabled title="Backend not connected yet">
+              Login (disabled)
+            </button>
+
+            <div class="divider">
+              <span>or</span>
+            </div>
+
+            <button class="btn btn--ghost" type="button" disabled title="OAuth later">
+              Continue with Google (disabled)
+            </button>
+
+            <p class="small">
+              Don’t have an account?
+              <button class="inline-btn" type="button" data-switch="signup">Create one</button>
+            </p>
+          </form>
+        </section>
+
+        <!-- SIGNUP PANEL -->
+        <section class="panel" id="panel-signup" role="tabpanel" aria-labelledby="tab-signup">
+          <form class="form" autocomplete="on">
+            <div class="field">
+              <label class="label" for="signup-name">Full Name</label>
+              <input class="input" id="signup-name" type="text" placeholder="Your name" />
+            </div>
+
+            <div class="field">
+              <label class="label" for="signup-email">Email</label>
+              <input class="input" id="signup-email" type="email" placeholder="you@example.com" />
+            </div>
+
+            <div class="field">
+              <label class="label" for="signup-password">Password</label>
+
+              <div class="input-wrap">
+                <input class="input" id="signup-password" type="password" placeholder="Create a strong password" />
+                <button class="icon-btn" type="button" data-toggle="password" data-target="signup-password" aria-label="Show password">
+                  👁️
+                </button>
+              </div>
+
+              <p class="hint">At least 8 characters recommended.</p>
+            </div>
+
+            <div class="field">
+              <label class="label" for="signup-confirm">Confirm Password</label>
+
+              <div class="input-wrap">
+                <input class="input" id="signup-confirm" type="password" placeholder="Re-enter password" />
+                <button class="icon-btn" type="button" data-toggle="password" data-target="signup-confirm" aria-label="Show password">
+                  👁️
+                </button>
+              </div>
+            </div>
+
+            <label class="check">
+              <input type="checkbox" />
+              <span>I agree to the <a class="link" href="#" onclick="return false;">Terms</a> & <a class="link" href="#" onclick="return false;">Privacy</a></span>
+            </label>
+
+            <button class="btn btn--primary" type="button" disabled title="Backend not connected yet">
+              Create account (disabled)
+            </button>
+
+            <p class="small">
+              Already have an account?
+              <button class="inline-btn" type="button" data-switch="login">Login</button>
+            </p>
+          </form>
+        </section>
+      </div>
+
+      <footer class="card__footer">
+        <p class="footer-text">
+          Next: React + Supabase Auth + Protected routes.
+        </p>
+      </footer>
+    </section>
+  </main>
+
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>
