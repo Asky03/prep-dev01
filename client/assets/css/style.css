@@ -57,6 +57,11 @@ body{
   border-bottom: 1px solid var(--line);
 }
 
+.brand__title,
+.brand__subtitle {
+  text-align: center;
+}
+
 .brand{
   display:flex;
   gap: 14px;
